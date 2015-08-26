@@ -210,10 +210,10 @@ public:
 		cout << 3;
 		return *this;
 	}
-	~C()
+	~C()  
 	{
 		cout << 4;
-	}
+	} 
 };
 void test19()
 {
@@ -400,6 +400,27 @@ void test_fprintf(void)
 	fprintf(stderr,"%s\n",s);   //输出的是s字符串  CDEFGH
 	printf("s address is : %d\n",s);
 }
+//------
+void test_while(void)
+{
+	int a = 100 ; 
+	while(a>0){
+		--a;
+	}
+	printf("a = %d\n",a);
+}
+//------
+int foo(int x,int y )
+{
+	if(x<=0 || y<=0)
+			return 1;
+	return 3*foo(x-1,y/2);
+}
+void test_digui(void)
+{
+	int n = foo(3,5);
+	printf("n = %d\n",n);
+}
 int main(void)
 {
     //test1();
@@ -417,8 +438,9 @@ int main(void)
 	//test_forknum();
 	//test_sizeof();
 	//testuniquepath();
-	test_fprintf();
-	 
+	//test_fprintf();
+	//test_while(); 
+	test_digui();
 	return 0;
 }
 
