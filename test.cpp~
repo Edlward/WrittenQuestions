@@ -490,27 +490,14 @@ typedef struct {
 void test_structsize(){
 	Bb bb;
 	printf("0x%x   \n",&bb.a);
+	printf("0x%x   \n",&bb.b);
 	printf("0x%x   \n",&bb.c);
 	printf("0x%x   \n",&bb.d);
-	printf("0x%x   \n",&bb.b);
 	printf("0x%x   \n",&bb.e);
 	printf("0x%x   \n",&bb.f);
-	printf("0x%x   \n",&bb.g);
-	printf("0x%x   \n",&bb.h);
-	printf("%d     \n",sizeof(bb));
+	printf("%d   \n",sizeof(bb));
 }
-void test_bit(){
-	
-	unsigned int temp = 0x11530828;
-    temp = (temp & 0x55555555) + ((temp & 0xaaaaaaaa) >> 1);
-    temp = (temp & 0x33333333) + ((temp & 0xccccccccc) >> 2);
-    temp = (temp & 0x0f0f0f0f) + ((temp & 0xf0f0f0f0 >> 4));
-    temp = (temp & 0xff00ff) + ((temp & 0xff00ff00) >> 8);
-    temp = (temp & 0xffff) + ((temp & 0xffff0000) >> 16);
-    //return temp;
-	printf("%d \n",temp);
 
-}
 int main(void)
 {
     //test1();
@@ -534,8 +521,8 @@ int main(void)
 	//test_virtual();
 	//test_Base();
 	//test_pk();
-	//test_structsize();
-	test_bit();
+	test_structsize();
+	
 	return 0;
 }
 
